@@ -1,10 +1,17 @@
-function getSum() {
-  let counter = 0;
-  return function(num) {
-    return counter += num;
-  }
-}
-const count = getSum(); 
-console.log(count(3));   
-console.log(count(5));   
-console.log(count(20));
+let ladder = {
+    step: 0,
+    up: function () {
+      this.step++;
+      return this;
+    },
+    down: function () {
+      this.step--;
+      return this;
+    },
+    showStep: function () { // показывает текущую ступеньку
+      alert(this.step);
+      return this;
+    }
+};
+
+ladder.up().up().down().showStep(); // 1
